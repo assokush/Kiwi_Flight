@@ -1,0 +1,34 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://PostgreSQL:5432/postgres
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      ddl-auto: validate
+      use-new-id-generator-mappings: false
+    show-sql: false
+  flyway:
+    url: jdbc:postgresql://PostgreSQL:5432/postgres
+    user: postgres
+    password: postgres
+    locations: classpath:db/migration/
+    baseline-on-migrate: true
+    enabled: true
+  main:
+    allow-bean-definition-overriding: true
+  codec:
+    max-in-memory-size: 500MB
+
+cors:
+  allowed-origins:
+    - http://localhost:8080
+
+kiwi:
+  url: https://api.skypicker.com
+
+
+
+
